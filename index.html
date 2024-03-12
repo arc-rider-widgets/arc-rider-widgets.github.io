@@ -1,1 +1,44 @@
-HELLO WORLD
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SVG Drawing Tool</title>
+    <style>
+      #drawingArea {
+        border: 1px solid black;
+      }
+      .button {
+        margin: 5px;
+        padding: 5px;
+      }
+      .button-highlight {
+        background-color: #ddd; /* Change as needed */
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="strokeColor">Stroke Color:</label>
+      <input type="color" id="strokeColor" value="#000000" />
+    </div>
+    <div>
+      <label for="strokeWidth">Stroke Width:</label>
+      <input type="number" id="strokeWidth" value="1" min="0" max="60" />
+    </div>
+    <div>
+      <label for="fillColor">Fill:</label>
+      <input type="color" id="fillColor" value="#000000" />
+      <label for="strokeColor">Transparent:</label>
+      <input type="checkbox" id="transparentFill" checked />
+    </div>
+
+    <button class="button" id="drag" onclick="setMode('drag')">Drag</button>
+    <button class="button" id="draw" onclick="setMode('draw')">Draw</button>
+    <button class="button" id="rectangle" onclick="setMode('rectangle')">Rectangle</button>
+    <button class="button" id="circle" onclick="setMode('circle')">Circle</button>
+    <button class="button" id="zoomIn">Zoom In</button>
+    <button class="button" id="zoomOut">Zoom Out</button>
+    <svg id="drawingArea" width="800" height="600"></svg>
+
+    <script src="drawingTool.js"></script>
+  </body>
+</html>
